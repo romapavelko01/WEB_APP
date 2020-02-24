@@ -12,7 +12,7 @@ from random import choice as ch
 import folium
 from opencage.geocoder import OpenCageGeocode
 
-from Lab_3_3 import twurl
+import twurl
 
 KEY = '9a05b0c1fd3b4387932903a5456254da'
 GEOCODER = OpenCageGeocode(KEY)
@@ -69,7 +69,7 @@ def main_loc(inp_dict):
 
 def create_map(inp_dict):
     """
-    (dict) -> (None)
+    (dict, str) -> (None)
     Creates a web-map according to the given dict
     of friends and their locations.
     """
@@ -83,22 +83,22 @@ def create_map(inp_dict):
         'darkblue', 'gray', 'orange', 'blue'
     ]
     styles = ['cloud', 'info-sign']
-    for i in inp_dict:
-        try:
-            fg_fr.add_child(folium.Marker(location=inp_dict[i],
-                                          popup=i,
-                                          icon=folium.Icon(color=ch(colors),
-                                                           icon=ch(styles)),
-                                          tooltip=tool_tip))
-        except ValueError:
-            pass
-    final_map.add_child(fg_fr)
-    final_map.save('templates/MyMap.html')
+    if inp_dict != {}:
+        for i in inp_dict:
+            try:
+                fg_fr.add_child(folium.Marker(location=inp_dict[i],
+                                              popup=i,
+                                              icon=folium.Icon(color=ch(colors),
+                                                               icon=ch(styles)),
+                                              tooltip=tool_tip))
+            except ValueError:
+                pass
+        final_map.add_child(fg_fr)
+    final_map.save('mysite/templates/MyMap.html')
     # html_string = final_map.get_root().render()
     # file_path = 'templates/MyMap.html'
     # html_file = open(file_path, 'w')
     # html_file.write(html_string)
-    # html_file.close()
 
 
 def main_func(inp_acc):
@@ -115,6 +115,8 @@ def main_func(inp_acc):
     if inp_acc != '':
         final_dict = collect_data(inp_acc, twitter_url, ctx_th)
         create_map(main_loc(final_dict))
+    else:
+        create_map({})
 
 
 if __name__ == "__main__":
