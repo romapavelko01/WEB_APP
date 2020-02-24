@@ -20,6 +20,7 @@ def get_data():
     return render_template('MyMap.html')
 
 
+# commenting a little
 if __name__ == "__main__":
     app.run()
 
