@@ -119,6 +119,7 @@ def main_func(inp_acc):
         create_map({})
 
 
+# running a program
 if __name__ == "__main__":
     ACC = collect_acc()
     main_func(ACC)
