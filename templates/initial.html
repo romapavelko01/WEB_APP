@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Search a friend</title>
     <style>
         body {
-        background: url("https://friendscafe.com.ua/wp-content/uploads/2017/03/cropped-friends-cafe-wallpaper.jpg") center center fixed;
-    }
-        h2 {
-        padding-top: 50px;
-        text-align: center;
+            background: url("https://friendscafe.com.ua/wp-content/uploads/2017/03/cropped-friends-cafe-wallpaper.jpg") center center fixed;
         }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 50px;
+            text-align: center;
+        }
+
         form {
-        padding-top: 50px;
-        text-align: center;
+            padding-top: 30px;
+            text-align: center;
         }
+        input [type=text] {
+            width: 30%;
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 4px;
+            background-color: rgb(230, 230, 230);
+            background-image: url('https://pngimage.net/wp-content/uploads/2018/06/searchicon.png-8.png');
+            background-repeat: no-repeat;
+            padding: 1px 1px 1px 1px;
+        }
+        input[type=text]:focus {
+            background-color: rgb(215, 215, 215);
+            transition: width 0.4s ease-in-out;
+        }
+        input[type=submit] {
+            height: 10%;
+            width: 7%;
+            background-color: rgb(200, 200, 200);
+            border: 2px solid rgb(150, 150, 150);
+            margin: 4px, 2x;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
 
-
+        }
+        label {
+            font-family: 'Courier New', Courier, monospace;
+            font-size-adjust: inherit;
+            font-size: 15px;
+        }
     </style>
 </head>
+
 <body>
-<h2>Where is a friend?</h2>
-<form action="." method="post">
-    <label for="account">Please, enter an account name to receive a map!</label><br>
-    <input type="text" id="account" name="Enter">
-    <input type="submit" value="Enter">
-</form>
-<!--
+    <h1>Where is a friend?</h1>
+    <form action="." method="post">
+        <label for="account"><b>Please, enter an account name to receive a map!</b></label><br>
+        <input type="text" id="account" name="Enter">
+        <input type="submit" value="Let's go!"> <!-- Enter-->
+    </form>
+    <!--
 <a href="">A map</a>
 <a href="https://twitter.com/PavelkoRoman">Check Your page on twitter</a> -->
 </body>
+
 </html>
