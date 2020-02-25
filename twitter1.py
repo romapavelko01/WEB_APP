@@ -1,5 +1,5 @@
 import urllib.request, urllib.error
-from Lab_3_3 import twurl
+import twurl
 import ssl
 
 # https://apps.twitter.com/

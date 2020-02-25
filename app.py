@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for
-from Lab_3_3.main import main_func
+from main import main_func
 
 
 app = Flask(__name__)

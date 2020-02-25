@@ -1,5 +1,6 @@
 import urllib.request, urllib.parse, urllib.error
-from Lab_3_3 import hidden, oauth
+import hidden
+import oauth
 
 
 # https://apps.twitter.com/
